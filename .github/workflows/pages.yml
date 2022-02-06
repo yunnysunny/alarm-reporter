@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master  # default branch
-  paths:
-    - "readme.md"
-    - "readme-cn.md"
+    paths:
+      - "readme.md"
+      - "readme-cn.md"
 
 jobs:
   pages:
