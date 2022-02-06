@@ -28,6 +28,7 @@ jobs:
         run: npm install markdown-to-html -g
       - name: Build
         run: |
+          mkdir -p docs
           markdown readme.md --highlight > docs/index.html
           markdown readme-cn.md --highlight > docs/index-cn.html
       - name: Deploy
