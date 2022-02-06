@@ -1,0 +1,18 @@
+{
+    "markdown-to-html": {
+      "document": {
+        "title": "alarm-reporter",
+        "description": "The reporter for mocha, supports send alarm message when current mocha test run failed.",
+        "meta": [
+          { "description": "The reporter for mocha, supports send alarm message when current mocha test run failed." },
+          { "keywords": "mocha reporter alarm" }
+        ]
+      },
+      "favicon": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>",
+      "github-corners": "https://github.com/yunnysunny/alarm-reporter",
+      "reurls": {
+        "readme-cn.md": "docs/index.zh.html",
+        "readme.md": "docs/index.html"
+      }
+    }
+  }

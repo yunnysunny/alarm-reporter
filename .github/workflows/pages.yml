@@ -26,12 +26,11 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        run: npm install markdown-to-html -g
+        run: npm i markdown-to-html-cli -g
       - name: Build
         run: |
           mkdir -p docs
-          markdown readme.md --highlight > docs/index.html
-          markdown readme-cn.md --highlight > docs/index-cn.html
+          markdown-to-html --config doc.json
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
