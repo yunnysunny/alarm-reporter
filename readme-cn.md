@@ -1,5 +1,18 @@
 # alarm-reporter
 
+[![build status][action-image]][action-url]
+[![GitHub license](https://img.shields.io/github/license/yunnysunny/alarm-reporter)](https://github.com/yunnysunny/alarm-reporter)
+[![node version][node-image]][node-url]
+
+[npm-url]: https://npmjs.org/package/@yunnysunny/alarm-reporter
+[action-image]: https://github.com/yunnysunny/alarm-reporter/workflows/CI/badge.svg
+[action-url]: https://github.com/yunnysunny/alarm-reporter/actions/workflows/ci.yml
+
+[node-image]: https://img.shields.io/badge/node.js-%3E=_12-green.svg?style=flat-square
+[node-url]: http://nodejs.org/download/
+
+[![NPM](https://nodei.co/npm/alarm-reporter.png?downloads=true)](https://nodei.co/npm/alarm-reporter/) 
+
 [English](readme.md)
 
 自定义 mocha 报表工具，支持通过预警接口发送报警邮件，适用于 CI 流程。

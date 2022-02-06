@@ -1,5 +1,18 @@
 # alarm-reporter
 
+[![build status][action-image]][action-url]
+[![GitHub license](https://img.shields.io/github/license/yunnysunny/alarm-reporter)](https://github.com/yunnysunny/alarm-reporter)
+[![node version][node-image]][node-url]
+
+[npm-url]: https://npmjs.org/package/@yunnysunny/alarm-reporter
+[action-image]: https://github.com/yunnysunny/alarm-reporter/workflows/CI/badge.svg
+[action-url]: https://github.com/yunnysunny/alarm-reporter/actions/workflows/ci.yml
+
+[node-image]: https://img.shields.io/badge/node.js-%3E=_12-green.svg?style=flat-square
+[node-url]: http://nodejs.org/download/
+
+[![NPM](https://nodei.co/npm/alarm-reporter.png?downloads=true)](https://nodei.co/npm/alarm-reporter/) 
+
 [中文](readme-cn.md)
 
 The reporter for mocha, supports send alarm message when current mocha test run failed, it's usageful for continuous integration.
