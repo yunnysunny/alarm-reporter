@@ -8,6 +8,8 @@ on:
       - "readme.md"
       - "readme-cn.md"
       - ".github/workflows/pages.yml"
+      - "doc.json"
+      - "package.json"
 
 jobs:
   pages:

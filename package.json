@@ -8,7 +8,7 @@
   "homepage": "https://github.com/yunnysunny/alarm-reporter",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yunnysunny/alarm-reporter.git"
+    "url": "https://github.com/yunnysunny/alarm-reporter.git"
   },
   "scripts": {
     "test": "node test/start.js"
