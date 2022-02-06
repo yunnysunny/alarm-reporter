@@ -7,6 +7,7 @@ on:
     paths:
       - "readme.md"
       - "readme-cn.md"
+      - ".github/workflows/pages.yml"
 
 jobs:
   pages:
