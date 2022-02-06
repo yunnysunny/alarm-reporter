@@ -22,14 +22,14 @@
         <a href="http://nodejs.org/download/"><img src="https://img.shields.io/badge/node.js-%3E=_12-green.svg?style=flat-square" alt="node version"></a>
       </p>
       <p><a href="https://nodei.co/npm/alarm-reporter/"><img src="https://nodei.co/npm/alarm-reporter.png?downloads=true" alt="NPM"></a></p>
-      <p><a href="readme-cn.md">中文</a></p>
-      <p>The reporter for mocha, supports send alarm message when current mocha test run failed, it's usageful for continuous integration.</p>
-      <h2 id="install"><a class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+      <p><a href="readme.md">English</a></p>
+      <p>自定义 mocha 报表工具，支持通过预警接口发送报警邮件，适用于 CI 流程。</p>
+      <h2 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><span class="octicon octicon-link"></span></a>安装</h2>
       <pre class="language-shell"><code class="language-shell"><span class="token function">yarn</span> <span class="token function">add</span> alarm-reporter --dev
 </code><div onclick="copied(this)" data-code="yarn add alarm-reporter --dev
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-      <h2 id="usage"><a class="anchor" aria-hidden="true" tabindex="-1" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
-      <p>Set the parameters of <code>--reporter</code> and <code>--reporter-options</code> to mocha in your <code>package.json</code> file, this is an example as follows:</p>
+      <h2 id="使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用"><span class="octicon octicon-link"></span></a>使用</h2>
+      <p>在 mocha 命令后面追加 <code>--reporter</code> 和 <code>--reporter-options</code> 参数,例如在 package.json 中修改 test 命令：</p>
       <pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"mocha path_for_test_files --timeout 99999 --reporter node_modules/alarm-reporter --reporter-options 'name=project-name,alarm=the_package_name_of_your_alarm_class'"</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -37,7 +37,7 @@
     &#x22;test&#x22;: &#x22;mocha path_for_test_files --timeout 99999 --reporter node_modules/alarm-reporter --reporter-options &#x27;name=project-name,alarm=the_package_name_of_your_alarm_class&#x27;&#x22;
 },
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-      <p>The <code>alarm</code> parameter of <code>repoter-options</code> is a Class, which should have the function of <code>sendSync</code>:</p>
+      <p><code>alarm</code> 参数是一个类，需要保证其含有 <code>sendSync</code> 成员函数：</p>
       <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">YourAlarm</span> <span class="token punctuation">{</span>
     <span class="token doc-comment comment">/**
      * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>object<span class="token punctuation">}</span></span> <span class="token parameter">reporterOption</span> The parameters from the cli parameter --reporter-options
@@ -65,8 +65,8 @@
     }
 }
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-      <p>Notice that , the function name ends with <code>Sync</code>, you have to write synchronized code in it. This will been called in the listener of <code>end</code> of mocha, the listener doesn't support asynchronous operations, it will exit when all test run finished, doesn't wait for any asynchronous code, such as operation of doing HTTP requests to your notify center.</p>
-      <p>You can write your http request code in a single js file, and then use <code>spawnSync</code> to make the request run in synchronized mode.</p>
+      <p>注意到这个函数是以 <code>Sync</code> 结尾的，所以你需要在里面写同步代码。这些代码会在 mocha 的 end 事件监听中被调用，这个监听不支持异步代码，它在 mocha 执行完所有测试后会直接退出，不会等待任何异步代码，比如说你可能用到的往某个通知中心发送 HTTP 请求的操作。</p>
+      <p>你可以将 HTTP 操作封装到单独文件中，然后使用 <code>spawnSync</code> 函数，让请求以同步的模式运行。</p>
       <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// util.js</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span> spawnSync <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token doc-comment comment">/**
