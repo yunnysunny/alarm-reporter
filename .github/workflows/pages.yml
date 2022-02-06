@@ -30,7 +30,8 @@ jobs:
       - name: Build
         run: |
           mkdir -p docs
-          markdown-to-html --config="doc.json"
+          markdown-to-html --source readme.md --output docs/index.html
+          markdown-to-html --source readme-cn.md --output docs/index-zh.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
