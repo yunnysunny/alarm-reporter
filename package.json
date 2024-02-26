@@ -1,6 +1,6 @@
 {
   "name": "alarm-reporter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "keywords": ["mocha", "reporter", "alarm"],
   "description": "The reporter for mocha, supports send alarm message when current mocha test run failed",
